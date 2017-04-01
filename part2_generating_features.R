@@ -74,7 +74,9 @@ df["stemmed_text"] <- textcorpus
 
 
 # prepocessing key words
-dict.keywords <- list("fake", "unreal", "unverified", "breaking", "action", "false");
+dict.keywords <- list("fake", "unreal", "unverified", "breaking", "action", "false", "parody", "untrue", "biased", "unbelievable",
+                      "crazy","ridiculous","phony","opposing","ufo","alien","debunked","misleading","invalid","fabricate",
+                      "unverified","claim","partial","distort","hypothetical","nonsense","bullshit","joke","fictional","misinterpret", "fraud");
 keyCorp = Corpus(VectorSource(dict.keywords))
 keyCorp <- tm_map(keyCorp, tolower) 
 
@@ -84,8 +86,8 @@ keyCorp = tm_map(keyCorp, removeNumbers)
 keyCorp = tm_map(keyCorp, stemDocument, language = "english")
 inspect(keyCorp[1:3]) 
 
-#adding contains_keywords feature
-df["contains_keywords"] <- 0
+#adding text_contains_keywords feature
+df["text_contains_keywords"] <- 0
 df$contains_keywords
 
 nrows <- dim(df)[1]
@@ -94,10 +96,22 @@ keys <- c(keyCorp)
 
 for(i in 1:nrows) {
   for(j in 1:lenKeys){
-     if(regexpr(keys$content[j], df[i,c("text")]) > 0){
-       df[i,c("contains_keywords")] <- df[i,c("contains_keywords")] + 1
+    if(regexpr(keys$content[j], df[i,c("stemmed_text")]) > 0){
+      df[i,c("text_contains_keywords")] <- df[i,c("text_contains_keywords")] + 1
     }
   }
 }
 
-df$contains_keywords[1:10]
+#Adding title_contains_keywords feature
+
+df["title_contains_keywords"] <- 0
+
+for(i in 1:nrows) {
+  for(j in 1:lenKeys){
+    if(regexpr(keys$content[j], df[i,c("stemmed_title")]) > 0){
+      df[i,c("title_contains_keywords")] <- df[i,c("title_contains_keywords")] + 1
+    }
+  }
+}
+
+
