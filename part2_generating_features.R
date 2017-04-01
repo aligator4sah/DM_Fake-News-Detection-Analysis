@@ -10,7 +10,26 @@ dict.sites <- list("americannews.com","bigamericannews.com", "christwire.org", "
                    "www.cc.com/indecision", "msnbc.co", "msnbc.website", "mediamass.net", "nationalreport.net", 
                    "newsbiscuit.com", "news-hound.com", "newsmutiny.com", "politicalears.com", "private-eye.co.uk", 
                    "realnewsrightnow.com", "rilenews.com", "sprotspickle.com", "thenewsnerd.com", "theuspatriot.com", 
-                   "witscience.org")
+                   "witscience.org","abcnews.com.co","abcnewsgo.co","24newsflash.com","alternativemediasyndicate.com",
+                   "americannews.com","americanoverlook.com","100percentfedup.com","365usanews.com","4threvolutionarywar.wordpress.com",
+                    "aheadoftheherd.com","americanlookout.com","americanpatriotdaily.com","americanthinker.com","AmmoLand.com",
+                    "anotherdayintheempire.com","beforeitsnews.com","bighairynews.com","bostonleader.com","buzzfeedusa.com",
+                    "cap-news.com","cbsnews.com.co","centerforsecuritypolicy.org","channel-7-news.com","charismanews.com",
+                    "cityworldnews.com","civictribune.com","clashdaily.com","conservativedailypost.com","conservativefighters.com",
+                    "conservativefiringline.com","dailyheadlines.com","dailyheadlines.net","denverguardian.com",
+                    "departed.co","donaldtrumpnews.co","embols.com","empireherald.com","empirenews.net",
+                   ,"floridasunpost.com","freedomdaily.com","gopthedailydose.com","goneleft.com","immediatesafety.org"
+                    "infostormer.com","intrendtoday.com","itaglive.com","libertyblitzkrieg.com","mediamass.net","myfreshnews.com","myzonetoday.com",
+                    "nationonenews.com","nbc.com.co","news4ktla.com","newsbbc.net","newsfrompolitics.com","newswithviews.com","now8news.com",
+                    "onlineconservativepress.com","pakalertpress.com","politicalo.com","politicalsitenews.com","politicalupdator.com"
+                  "prntly.com","proudcons.com","react365.com","realnewsrightnow.com","rhotv.com","rickwells.us","rilenews.com", 
+                   "subjectpolitics.com","success-street.com","supremepatriot.com","theamericanindependent.wordpress.com",
+                    "thebostontribune.com","thecommonsenseshow.com","thecontroversialfiles.net","thefreepatriot.org",
+                   "thelastgreatstand.com","theracketreport.com","thereporterz.com","therightists.com","therightscoop.com",
+                  "thetruthdivision.com","thetruthseeker.co.uk","trumpvision365.com","undergroundworldnews.com","usa2016elections.com",
+                  "usadailypolitics.com","usadailytime.com","usahitman.com","usainfobox.com","usamagazinestudio.com","usanewsflash.com",
+                  "usanewsinsider.com","usanewspolitics.com","usaonlinepolitics.com","usaphase.com","vigilantcitizen.com",
+                  "viralliberty.com","worldpoliticsus.com","worldrumor.com","worldstoriestoday.com","wtoe5news.com")
 
 
 dict.sites
