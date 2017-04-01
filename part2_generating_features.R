@@ -18,10 +18,10 @@ dict.sites <- list("americannews.com","bigamericannews.com", "christwire.org", "
                     "cityworldnews.com","civictribune.com","clashdaily.com","conservativedailypost.com","conservativefighters.com",
                     "conservativefiringline.com","dailyheadlines.com","dailyheadlines.net","denverguardian.com",
                     "departed.co","donaldtrumpnews.co","embols.com","empireherald.com","empirenews.net",
-                   ,"floridasunpost.com","freedomdaily.com","gopthedailydose.com","goneleft.com","immediatesafety.org"
+                   "floridasunpost.com","freedomdaily.com","gopthedailydose.com","goneleft.com","immediatesafety.org",
                     "infostormer.com","intrendtoday.com","itaglive.com","libertyblitzkrieg.com","mediamass.net","myfreshnews.com","myzonetoday.com",
                     "nationonenews.com","nbc.com.co","news4ktla.com","newsbbc.net","newsfrompolitics.com","newswithviews.com","now8news.com",
-                    "onlineconservativepress.com","pakalertpress.com","politicalo.com","politicalsitenews.com","politicalupdator.com"
+                    "onlineconservativepress.com","pakalertpress.com","politicalo.com","politicalsitenews.com","politicalupdator.com",
                   "prntly.com","proudcons.com","react365.com","realnewsrightnow.com","rhotv.com","rickwells.us","rilenews.com", 
                    "subjectpolitics.com","success-street.com","supremepatriot.com","theamericanindependent.wordpress.com",
                     "thebostontribune.com","thecommonsenseshow.com","thecontroversialfiles.net","thefreepatriot.org",
