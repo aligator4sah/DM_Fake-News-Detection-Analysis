@@ -193,7 +193,7 @@ final[1:3,]
 
 
 data <- final[c(13,15:21,25:length(final))]
-
+rownames(data)
 library(VGAM)
 fit <- vglm(type~.,multinomial,data=data[,c(-6,-19)])
 
@@ -209,14 +209,20 @@ data <- final[c(13,15:21,25:length(final))]
 fit <- multinom(data$type~., data[,c(-6,-19)])
 table(predict(fit,data[,c(-6,-19)],type="class"),data$type)
 
+dataUnsupervised <- final[c(13,15:21,25:length(final))]
+finalDataset = dataUnsupervised[c(-6,-19,-7)]
+
+
+#Starting nn analysis --- ignore below this ---
+
 
 #Baseline Analysis
 data <- final[c(13,15:21,25:length(final))]
-dataset = data[c(-6,-19,-7)]
+dataset = data[c(-6,-8,-19,-7)]
 target = data[c(7)]
 
 total_length = length(data$spam_score)
-ratio = 0.7
+ratio = 0.8
 n_train = total_length * ratio
 n_test = total_length * (1- ratio)
 
@@ -232,7 +238,8 @@ test_target = target[-train,]
 #Single Hidden Layer Feed Forward Neural Network
 library(nnet)
 fit <- nnet(d~.,data=data.frame(d=train_target,train_data), size=8, linout = TRUE)
-table(predict(fit,test_data,type="class"),test_target)
+predicted_target <- predict(fit,test_data,type="class")
+table(predicted_target,test_target)
 
 
 #Multinomial Logistic Regression
@@ -270,8 +277,6 @@ check.model.accuracy <- function(predicted.class, actual.class){
 check.model.accuracy(predicted_target,test_target) 
 # For multiclass, average across all classes
 table(test_target)
-
-
 
 grp8$cluster
 
