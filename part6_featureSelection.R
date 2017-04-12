@@ -7,9 +7,12 @@ set.seed(7)
 library(mlbench)
 library(caret)
 # calculate correlation matrix
-#get df from part 2
-dataset8 = df[c("author","language","site_url","country","likes","shares","spam_score","Gave_Fake",
-                "text_contains_keywords","title_contains_keywords","main_img_url","type")]
+#get dataset from part 3
+dataset8 = dataset[c("author","language","site_url","country","main_img_url","type")]
+
+finalDataset = data.matrix(finalDataset)
+dataset8 = cbind(dataset8, finalDataset)
+
 
 dataset8$language<- as.numeric(as.factor(dataset8$language))
 dataset8$author<- as.numeric(as.factor(dataset8$author))
@@ -18,13 +21,20 @@ dataset8$country<- as.numeric(as.factor(dataset8$country))
 dataset8$main_img_url<- as.numeric(as.factor(dataset8$main_img_url))
 str(dataset8)
 
-correlationMatrix <- cor(dataset8[,-12])
+correlationMatrix <- cor(dataset8[,-6])
 # summarize the correlation matrix
 print(correlationMatrix)
 # find attributes that are highly corrected (ideally >0.75)
 highlyCorrelated <- findCorrelation(correlationMatrix, cutoff=0.5)
+
 # print indexes of highly correlated attributes
 print(highlyCorrelated)
+
+
+dataset9 = dataset8[c(12,21,26,7)]
+str(dataset9)
+
+#high correlated columns are Gave_Fake, v9, v15, spam_score
 
 ################################################################################
 #Rank features by importance
@@ -47,7 +57,7 @@ set.seed(7)
 # define the control using a random forest selection function
 control <- rfeControl(functions=rfFuncs, method="cv", number=10)
 # run the RFE algorithm
-results <- rfe(dataset8[,1:11], dataset8[,12], sizes=c(1:11), rfeControl=control)
+results <- rfe(dataset8[,-6], dataset8[,6], sizes=c(7:35), rfeControl=control)
 # summarize the results
 print(results)
 # list the chosen features
